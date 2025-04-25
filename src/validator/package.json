@@ -1,0 +1,23 @@
+{
+  "name": "validator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@dfinity/agent": "^2.4.1",
+    "@dfinity/identity": "^2.4.1",
+    "@dfinity/identity-secp256k1": "^2.4.1",
+    "@dfinity/principal": "^2.4.1",
+    "axios": "^1.8.4",
+    "dotenv": "^16.5.0",
+    "ethers": "^6.13.5",
+    "express": "^5.1.0",
+    "web3": "^4.16.0"
+  }
+}

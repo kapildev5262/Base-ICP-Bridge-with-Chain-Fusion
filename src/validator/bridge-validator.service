@@ -1,0 +1,19 @@
+[Unit]
+Description=Chain Fusion Bridge Validator
+After=network.target
+
+[Service]
+User=kapil
+WorkingDirectory=/home/kapil/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/validator
+ExecStart=/usr/bin/node validator.js
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=bridge-validator
+Environment=NODE_ENV=production
+# Load environment variables from .env file
+EnvironmentFile=/home/kapil/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/validator/.env
+
+[Install]
+WantedBy=multi-user.target

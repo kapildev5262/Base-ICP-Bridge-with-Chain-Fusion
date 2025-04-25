@@ -1,0 +1,191 @@
+dfx canister call token_canister mint '(principal "YOUR_PRINCIPAL_ID", 1000)'
+dfx canister call token_canister balanceOf '(principal "YOUR_PRINCIPAL_ID")'
+
+
+dfx canister call token_canister mint '(principal "ll625-bdz2k-ezv67-rdgqt-btnat-7fubl-ggtpa-ze7ra-5t735-eu7tn-vqe", 1000)'
+dfx canister call token_canister balanceOf '(principal "ll625-bdz2k-ezv67-rdgqt-btnat-7fubl-ggtpa-ze7ra-5t735-eu7tn-vqe")'
+
+YOUR_PRINCIPAL_ID=ll625-bdz2k-ezv67-rdgqt-btnat-7fubl-ggtpa-ze7ra-5t735-eu7tn-vqe
+
+
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/contracts$ npx hardhat run scripts/deploy.js --network base_sepolia
+Compiled 5 Solidity files successfully (evm target: paris).
+Deploying BaseBridge contract...
+Waiting for deployment...
+Base Bridge deployed to: 0x4f3c365693B6555C99e9528d6958A8B686BD41B2
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/contracts$  npx hardhat verify --network base_sepolia 0x4f3c365693B6555C99e9528d6958A8B686BD41B2
+[INFO] Sourcify Verification Skipped: Sourcify verification is currently disabled. To enable it, add the following entry to your Hardhat configuration:
+
+sourcify: {
+  enabled: true
+}
+
+Or set 'enabled' to false to hide this message.
+
+For more information, visit https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify#verifying-on-sourcify
+Successfully submitted source code for contract
+contracts/BaseBridge.sol:BaseBridge at 0x4f3c365693B6555C99e9528d6958A8B686BD41B2
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract BaseBridge on the block explorer.
+https://sepolia.basescan.org/address/0x4f3c365693B6555C99e9528d6958A8B686BD41B2#code
+
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/contracts$
+
+
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx start --background
+Running dfx start for version 0.26.0
+Using the default configuration for the local shared network.
+Replica API running in the background on 127.0.0.1:4943
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx deploy
+Deploying all canisters.
+All canisters have already been created.
+Building canister 'token_canister'.
+WARN: /home/kapil/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/backend/token_canister.mo:10.17-10.20: warning [M0194], unused identifier msg (delete or rename to wildcard `_` or `_msg`)
+/home/kapil/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/backend/token_canister.mo:38.17-38.20: warning [M0194], unused identifier msg (delete or rename to wildcard `_` or `_msg`)
+
+Building canister 'bridge_canister'.
+WARN: /home/kapil/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/backend/bridge_canister.mo:262.24-262.48: warning [M0195], this function call implicitly requires `system` capability and may perform undesired actions (please review the call and provide a type instantiation `<system>` to suppress this warning)
+/home/kapil/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/backend/bridge_canister.mo:6.8-6.12: warning [M0194], unused identifier Hash (delete or rename to wildcard `_` or `_Hash`)
+/home/kapil/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/backend/bridge_canister.mo:11.8-11.14: warning [M0194], unused identifier Option (delete or rename to wildcard `_` or `_Option`)
+/home/kapil/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/backend/bridge_canister.mo:51.24-51.37: warning [M0194], unused identifier minimumCycles (delete or rename to wildcard `_` or `_minimumCycles`)
+/home/kapil/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/backend/bridge_canister.mo:262.13-262.21: warning [M0194], unused identifier accepted (delete or rename to wildcard `_` or `_accepted`)
+
+Building canister 'frontend'.
+Module hash e4d048020b9f10f6e941745e1b188b6ff7768651e727cf504559be62f68efe5a is already installed.
+Upgraded code for canister bridge_canister, with canister ID ufxgi-4p777-77774-qaadq-cai
+Module hash 865eb25df5a6d857147e078bb33c727797957247f7af2635846d65c5397b36a6 is already installed.
+WARN: This project does not define a security policy for any assets.
+WARN: You should define a security policy in .ic-assets.json5. For example:
+WARN: [
+WARN:   {
+WARN:     "match": "**/*",
+WARN:     "security_policy": "standard"
+WARN:   }
+WARN: ]
+WARN: To disable the policy warning, define "disable_security_policy_warning": true in .ic-assets.json5.
+Upgraded code for canister frontend, with canister ID ucwa4-rx777-77774-qaada-cai
+Module hash d31f06931cbfb58545fe6e5e59b280c801107012ea1663425771ba065177780f is already installed.
+Upgraded code for canister token_canister, with canister ID umunu-kh777-77774-qaaca-cai
+Deployed canisters.
+URLs:
+  Frontend canister via browser:
+    frontend:
+      - http://ucwa4-rx777-77774-qaada-cai.localhost:4943/ (Recommended)
+      - http://127.0.0.1:4943/?canisterId=ucwa4-rx777-77774-qaada-cai (Legacy)
+  Backend canister via Candid interface:
+    bridge_canister: http://127.0.0.1:4943/?canisterId=uzt4z-lp777-77774-qaabq-cai&id=ufxgi-4p777-77774-qaadq-cai
+    token_canister: http://127.0.0.1:4943/?canisterId=uzt4z-lp777-77774-qaabq-cai&id=umunu-kh777-77774-qaaca-cai
+
+For more information, try '--help'.
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx canister status --all
+Canister status call result for bridge_canister.
+Status: Running
+Controllers: ll625-bdz2k-ezv67-rdgqt-btnat-7fubl-ggtpa-ze7ra-5t735-eu7tn-vqe uqqxf-5h777-77774-qaaaa-cai
+Memory allocation: 0 Bytes
+Compute allocation: 0 %
+Freezing threshold: 2_592_000 Seconds
+Idle cycles burned per day: 24_272_151 Cycles
+Memory Size: 2_375_148 Bytes
+Balance: 2_998_869_019_246 Cycles
+Reserved: 0 Cycles
+Reserved cycles limit: 5_000_000_000_000 Cycles
+Wasm memory limit: 3_221_225_472 Bytes
+Wasm memory threshold: 0 Bytes
+Module hash: 0xe4d048020b9f10f6e941745e1b188b6ff7768651e727cf504559be62f68efe5a
+Number of queries: 0
+Instructions spent in queries: 5_616
+Total query request payload size: 0 Bytes
+Total query response payload size: 0 Bytes
+Log visibility: controllers
+Canister status call result for frontend.
+Status: Running
+Controllers: ll625-bdz2k-ezv67-rdgqt-btnat-7fubl-ggtpa-ze7ra-5t735-eu7tn-vqe uqqxf-5h777-77774-qaaaa-cai
+Memory allocation: 0 Bytes
+Compute allocation: 0 %
+Freezing threshold: 2_592_000 Seconds
+Idle cycles burned per day: 42_267_731 Cycles
+Memory Size: 4_136_103 Bytes
+Balance: 2_992_596_166_298 Cycles
+Reserved: 0 Cycles
+Reserved cycles limit: 5_000_000_000_000 Cycles
+Wasm memory limit: 3_221_225_472 Bytes
+Wasm memory threshold: 0 Bytes
+Module hash: 0x865eb25df5a6d857147e078bb33c727797957247f7af2635846d65c5397b36a6
+Number of queries: 0
+Instructions spent in queries: 68_178_305
+Total query request payload size: 10_894 Bytes
+Total query response payload size: 1_008_800 Bytes
+Log visibility: controllers
+Canister status call result for token_canister.
+Status: Running
+Controllers: ll625-bdz2k-ezv67-rdgqt-btnat-7fubl-ggtpa-ze7ra-5t735-eu7tn-vqe uqqxf-5h777-77774-qaaaa-cai
+Memory allocation: 0 Bytes
+Compute allocation: 0 %
+Freezing threshold: 2_592_000 Seconds
+Idle cycles burned per day: 23_794_648 Cycles
+Memory Size: 2_328_422 Bytes
+Balance: 2_999_083_979_322 Cycles
+Reserved: 0 Cycles
+Reserved cycles limit: 5_000_000_000_000 Cycles
+Wasm memory limit: 3_221_225_472 Bytes
+Wasm memory threshold: 0 Bytes
+Module hash: 0xd31f06931cbfb58545fe6e5e59b280c801107012ea1663425771ba065177780f
+Number of queries: 0
+Instructions spent in queries: 14_092
+Total query request payload size: 26 Bytes
+Total query response payload size: 0 Bytes
+Log visibility: controllers
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx identity get-principal
+ll625-bdz2k-ezv67-rdgqt-btnat-7fubl-ggtpa-ze7ra-5t735-eu7tn-vqe
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx canister call token_canister mint "(principal \"$(dfx identity get-principal)\", 1000)"
+(variant { ok })
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx canister call token_canister balanceOf "(principal \"$(dfx identity get-principal)\")"
+(2_900 : nat)
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx canister call bridge_canister lockTokens '(record { token = principal "umunu-kh777-77774-qaaca-cai"; amount = 100; recipient = "0xF5847aA66495441DA438A477f60F3359D703C85A" })'
+(
+  record {
+    txId = "ll625-bdz2k-ezv67-rdgqt-btnat-7fubl-ggtpa-ze7ra-5t735-eu7tn-vqe-umunu-kh777-77774-qaaca-cai-100-1744878236767130299";
+  },
+)
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx canister call bridge_canister getTransferStatus "(\"ll625-bdz2k-ezv67-rdgqt-btnat-7fubl-ggtpa-ze7ra-5t735-eu7tn-vqe-umunu-kh777-77774-qaaca-cai-100-1744878236767130299\")"
+(record { completed = false; timestamp = 1_744_878_236_767_130_299 : nat64 })
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx canister call token_canister balanceOf "(principal \"$(dfx identity get-principal)\")"
+(2_800 : nat)
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx canister call token_canister balanceOf "(principal \"ufxgi-4p777-77774-qaadq-cai\")"
+(200 : nat)
+
+
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx canister call token_canister balanceOf "(principal \"raapj-wugdi-uvj6y-wiv3i-uqor5-b6sic-csd5d-m4ago-z6nug-avx6a-6qe\")"
+(0 : nat)
+
+
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx identity new test-identity
+Please enter a passphrase for your identity: [hidden]
+Encryption complete.
+Your seed phrase for identity 'test-identity': bounce alone accident zoo magnet right track level such adapt token spread anxiety pattern lake popular also connect robot funny follow fiber wheel thrive
+This can be used to reconstruct your key in case of emergency, so write it down in a safe place.
+Created identity: "test-identity".
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx identity whoami
+dfx identity get-wallet
+default
+uqqxf-5h777-77774-qaaaa-cai
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx identity get-principal
+ll625-bdz2k-ezv67-rdgqt-btnat-7fubl-ggtpa-ze7ra-5t735-eu7tn-vqe
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx identity use test-identity
+Using identity: "test-identity".
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx identity whoami
+test-identity
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx identity get-principal
+Please enter the passphrase for your identity: [hidden]
+Decryption complete.
+raapj-wugdi-uvj6y-wiv3i-uqor5-b6sic-csd5d-m4ago-z6nug-avx6a-6qe
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ dfx identity use default
+Using identity: "default".
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge$ 
+
+
+
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/validator$ curl http://localhost:3000/processed
+kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/validator$ curl http://localhost:3000/status3:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/validator$ curl http://localhost:3000/status
+{"error":"Do not know how to serialize a BigInt"}kapil@DESKTOP-H10OM73:~/...BLOCKCHAIN/Internship/One-Pager/base_icp_bridge/src/validator$

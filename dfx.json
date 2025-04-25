@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "bridge_canister": {
+      "main": "src/backend/bridge_canister.mo",
+      "type": "motoko"
+    },
+    "token_canister": {
+      "main": "src/backend/token_canister.mo",
+      "type": "motoko"
+    },
+    "frontend": {
+      "dependencies": ["bridge_canister", "token_canister"],
+      "frontend": {
+        "entrypoint": "src/frontend/index.html"
+      },
+      "source": ["src/frontend/dist"],
+      "type": "assets",
+      "workspace": "src/frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "mops sources"
+    }
+  },
+  "version": 1
+}
