@@ -1,0 +1,192 @@
+/* BaseBridgeInterface.css */
+
+:root {
+  --primary-color: #3366ff;
+  --primary-dark: #2851cc;
+  --accent-color: #ff5c33;
+  --background-color: #f5f7fa;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --border-color: #e0e0e0;
+  --success-color: #4caf50;
+  --error-color: #f44336;
+  --warning-color: #ff9800;
+  --info-color: #2196f3;
+}
+
+.bridge-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+h3 {
+  color: var(--text-color);
+  margin-top: 0;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(51, 102, 255, 0.2);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+}
+
+.primary-button:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.action-button {
+  background-color: var(--accent-color);
+  color: white;
+  width: 100%;
+}
+
+.action-button:hover:not(:disabled) {
+  background-color: #e64d29;
+}
+
+.admin-button {
+  background-color: var(--primary-color);
+  color: white;
+  flex: 1;
+}
+
+.admin-button:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.connect-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-section {
+  margin-top: 30px;
+  border-top: 2px dashed var(--border-color);
+  padding-top: 20px;
+}
+
+.token-info {
+  background-color: #f0f5ff;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.token-info p {
+  margin: 5px 0;
+}
+
+.notification {
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.notification.success {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+
+.notification.error {
+  background-color: rgba(244, 67, 54, 0.2);
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+}
+
+.notification.warning {
+  background-color: rgba(255, 152, 0, 0.2);
+  color: var(--warning-color);
+  border: 1px solid var(--warning-color);
+}
+
+.notification.info {
+  background-color: rgba(33, 150, 243, 0.2);
+  color: var(--info-color);
+  border: 1px solid var(--info-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bridge-container {
+    padding: 15px;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+}
